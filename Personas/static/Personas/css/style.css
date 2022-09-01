@@ -1,0 +1,165 @@
+html{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.header {
+    background-color: rgba(109, 235, 25, 0.514);
+}
+
+.btn-admin {
+    background-color: rgb(15, 31, 175);
+    border: none;
+    
+}
+
+.btn-admin a:visited{
+    text-decoration: none;
+    color: white;
+}
+
+.btn-admin a{
+    text-decoration: none;
+    color: white;
+}
+
+.btn-admin a:hover{
+    color:rgb(82, 190, 10);
+}
+
+
+body {
+    height: 100vh;
+    color: white;
+    overflow-x: hidden;
+
+}
+
+table{
+    position: relative;
+}
+
+footer {
+    position: relative;
+    max-height: 6vh;
+    min-height: 6vh;
+    bottom:0;
+    width: 100%;
+}
+
+.formCargaJugadores{
+    position: relative;
+    border: 1px solid rgba(255, 255, 255, 0.247);
+    width: 45%;
+    padding: 20px;
+    background-color: rgba(21, 233, 85, 0.89);
+    border-radius: 15px;
+}
+
+.buscaYcarga{
+    position: relative;
+    padding: 40px 20px;
+    border-radius: 8px;
+    background: rgb(29, 87, 2);
+    background: linear-gradient(124deg, rgba(2,0,36,0.4738270308123249) 0%, rgba(56,56,69,0.40940126050420167) 35%, rgba(58,72,102,0.45702030812324934) 57%, rgba(81,95,142,0.4822303921568627) 92%, rgba(74,113,121,0.48783263305322133) 100%);
+}
+
+/* From uiverse.io */
+.btnCargar {
+    --color: #236604;
+    font-family: inherit;
+    display: inline-block;
+    width: 6em;
+    height: 2.6em;
+    line-height: 2.5em;
+    position: relative;
+    right: 0;
+    left: 0;
+    margin: auto;
+    overflow: hidden;
+    border: 2px solid var(--color);
+    transition: color .5s;
+    z-index: 1;
+    font-size: 17px;
+    border-radius: 6px;
+    font-weight: 500;
+    color: var(--color);
+   }
+   
+   .btnCargar:before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    background: var(--color);
+    height: 150px;
+    width: 200px;
+    border-radius: 50%;
+   }
+   
+   .btnCargar:hover {
+    color: #fff;
+   }
+   
+   .btnCargar:before {
+    top: 100%;
+    left: 100%;
+    transition: all .7s;
+   }
+   
+   .btnCargar:hover:before {
+    top: -30px;
+    left: -30px;
+   }
+   
+   .btnCargar:active:before {
+    background: #3a0ca3;
+    transition: background 0s;
+   }
+
+
+.btnBuscar {
+    margin-left: 3px;
+    border: 2px solid white;
+    color:white;
+}
+
+.btnBuscar:hover {
+    background-color: white;
+    color: #076d04;
+    border: 2px solid white;
+}
+
+.formBuscaJugadores{
+    border-radius: 35px;
+    background-color: rgba(114, 235, 16, 0.644);
+}
+
+.pantallaInicio {
+    height: 75vh;
+    width: 100%;
+    margin-top: 25px;
+    margin-bottom: 25px;
+}
+
+.pantallaInicio img {
+    position: absolute;
+    height: 75vh;
+    width: 100%;
+    object-fit: fill;
+}
+
+.pantallaInicio div {
+    position:relative;
+    display:inline-block;
+    padding: 20px;
+    left: 40%;
+    top: 10%;
+    border-radius: 15px;
+    margin:auto;
+    background-color: rgba(40, 129, 12, 0.705);
+}
+
+.contenidoQueCambia{
+    min-height: 87vh;
+    position: relative;;
+}

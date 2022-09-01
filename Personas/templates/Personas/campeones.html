@@ -1,0 +1,55 @@
+
+{% extends "Personas/padre.html" %}
+{% load static %}
+
+{% block titulo %}
+<title>Campeones</title>
+{% endblock %}
+
+{% block contenidoQueCambia %}
+
+    <div class="container mt-5">
+        <table class="table table-dark table-hover">
+            <thead>
+                <th>
+                    Pais
+                </th>
+                <th>
+                    Tecnico
+                </th>
+                <th>
+                    Año
+                </th>
+            </thead>
+            <tbody>
+                {% for campeon in campeones %}
+                <tr>
+                    <td>
+                        {{campeon.nombre}}
+                    </td>
+                    <td>
+                        {{campeon.apellido}}
+                    </td>
+                    <td>
+                        {{campeon.periodo}}
+                    </td>
+                </tr>
+            {% endfor %}
+        </tbody>
+
+    <div class="container mt-4 d-flex flex-row justify-content-evenly  align-items-start buscaYcarga">
+       
+        <div class="d-flex flex-column align-items-center justify-content-center formCargaJugadores">
+            {% if formularioCampeones.errors %}
+            <p style="color:red">Revisar, hay errores en los datos</p>
+            {% endif%}
+        
+            <form action="" method="POST" class="">{% csrf_token %}
+                <h3 class="mb-1">Campeones del Mundo</h3>
+                <hr class="mb-4">
+                    <table class="">
+
+            
+    
+  
+{% endblock %}

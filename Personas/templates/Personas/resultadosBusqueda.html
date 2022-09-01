@@ -1,0 +1,29 @@
+
+{% extends "Personas/padre.html" %}
+{% load static %}
+
+{% block titulo %}
+<title>Resultado de busqueda</title>
+{% endblock %}
+
+{% block contenidoQueCambia %}
+
+    
+    {% if jugadores %}
+
+        {% for jugador in jugadores%}
+            Nombre: {{jugador.nombre}} {{jugador.apellido}} [{{jugador.ranking}}] <br>
+        {% endfor %}
+
+    {% endif %}
+
+    {% if torneos %}
+        
+        {% for torneo in torneos%}
+            Nombre: {{torneo.nombre}} <br>
+        {% endfor %}
+
+    {% endif %}
+
+
+{% endblock %}
