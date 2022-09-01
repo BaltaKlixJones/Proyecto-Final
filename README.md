@@ -1,6 +1,11 @@
 Primera entrega del proyecto final del curso de Python para principiantes de CoderHouse
+Creadores del proyecto : 
+            Baltasar Klix Jones,
+            Andres Sosa,
+            Bautista Toccalino.
 
-El proyecto es sobre una pagina web con informacion de los mundiales.
+
+El proyecto es una pagina web y contiene informacion de los mundiales.
 
 * Link Jugadores
 Contiene información de los goleadores de los Mundiales por nombre, apellido, nacionalidad y cantidad de ranking.
