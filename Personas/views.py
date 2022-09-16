@@ -2,7 +2,7 @@ from django.http import HttpResponse
 from django.shortcuts import render
 
 from Personas.forms import PersonaFormulario, TorneoFormulario, CampeonesFormulario
-from .models import Persona, Torneo, Campeones
+from .models import *
 
 
 
@@ -118,3 +118,43 @@ def campeones(request):
         formularioCampeones = CampeonesFormulario()
 
     return render(request, "Personas/campeones.html", {"formularioCampeones":formularioCampeones, "campeones":campeones})
+
+
+# leer jugadores
+
+def leerPersonas(request):
+    persona= Persona.objects.all()
+    print(persona)
+    return render (request ,"Personas/leerPersonas.html", {"persona": persona})
+
+# eliminar jugadores
+
+def eliminarPersonas(request, id):
+    jugador = Persona.objects.get(id= id)
+    jugador.delete()
+    persona= Persona.objects.all()
+    return render (request ,"Personas/leerPersonas.html", {"persona": persona})
+
+
+# editar jugador
+def editarPersonas(request, id):
+    jugador = Persona.objects.get(id=id)
+    if request.method == 'POST':
+        form=PersonaFormulario(request.POST)
+        if form.is_valid():
+
+            info=form.cleaned_data
+            jugador.nombre= info["nombre"]
+            jugador.apellido= info["apellido"]
+            jugador.nacionalidad= info["nacionalidad"]
+            jugador.ranking= info["ranking"]
+            jugador.save()
+            persona= Persona.objects.all()
+            return render (request ,"Personas/leerPersonas.html", {"persona": persona})
+
+    else:
+        form= PersonaFormulario(initial={"nombre": jugador.nombre, "apellido": jugador.apellido, "nacionalidad": jugador.nacionalidad, "ranking":jugador.ranking})
+        return render (request ,"Personas/editarPersona.html", {"formulario": form, "nombre_jugador": jugador.nombre, "apellido_jugador":jugador.apellido, "id":jugador.id})
+
+    
+

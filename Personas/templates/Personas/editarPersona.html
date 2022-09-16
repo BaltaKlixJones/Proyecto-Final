@@ -1,0 +1,25 @@
+
+{% extends "Personas/padre.html" %}
+{% load static %}
+
+{% block titulo %}
+<title>Listado de Jugadores</title>
+{% endblock %}
+
+{% block contenidoQueCambia %}
+<h1>Editando a {{ nombre_jugador }} {{ apellido_jugador }}</h1>
+<br>
+<form action="{% url 'editarPersona' id %}" method="POST"> {% csrf_token %}
+
+<table>
+    {{ formulario.as_table }}
+</table>
+
+<button type="submit" value= "Guardar" class="btn btn-outline-primary btn">Guardar</button>
+
+</form>
+
+
+
+
+{% endblock %}

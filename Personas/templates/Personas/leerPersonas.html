@@ -1,0 +1,33 @@
+
+{% extends "Personas/padre.html" %}
+{% load static %}
+
+{% block titulo %}
+<title>Listado de Jugadores</title>
+{% endblock %}
+
+{% block contenidoQueCambia %}
+<h1>Listado de jugadores: </h1>
+<br>
+
+{% for personas in persona %}
+
+    <ul>
+        <li>
+           <h4>
+            {{ personas.nombre }} {{ personas.apellido }}, {{ personas.nacionalidad }}   
+        </h4>
+        <h6><a href="{% url 'eliminarPersonas' personas.id %}" class="">Eliminar</a></h6>
+        <h6><a href="{% url 'editarPersona' personas.id %}" class="">Editar</a></h6>
+            
+        </li>
+    </ul>
+
+
+
+{% endfor %}
+<br>
+<a href="{% url 'Persona' %}" class="btn btn-outline-success">Agregar Jugador</a>
+
+
+{% endblock %}
